@@ -1,0 +1,30 @@
+plugins {
+	id 'org.springframework.boot' version '2.1.6.RELEASE'
+	id 'java'
+	id 'org.sonarqube' version '2.7.1'
+}
+
+apply plugin: 'io.spring.dependency-management'
+
+group = 'com.joshcummings'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = '1.8'
+
+sonarqube {
+	properties {
+		property "structure101.java.disabled", "false"
+		property "structure101.java.project", "Using Structure101 Sonar Plugin"
+		property "structure101.java.repository", "$rootDir/structure101-repository"
+		property "structure101.java.classpath", "${buildDir.absolutePath}/classes/java/main/"
+		property "structure101.java.license", "$rootDir"
+	}
+}
+
+repositories {
+	mavenCentral()
+}
+
+dependencies {
+	implementation 'org.springframework.boot:spring-boot-starter'
+	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+}

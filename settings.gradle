@@ -1,0 +1,6 @@
+pluginManagement {
+	repositories {
+		gradlePluginPortal()
+	}
+}
+rootProject.name = 'using-structure101-sonar-plugin'
