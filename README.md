@@ -6,7 +6,7 @@ To reproduce, do the following:
 git clone https://github.com/jzheaux/using-structure101-sonar-plugin.git
 cd using-structure101-sonar-plugin
 cp $LICENSE .
-docker run -d -p 9000:9000 jzheaux/sonar-and-structure101:latesti
+docker run -d -p 9000:9000 jzheaux/sonar-and-structure101:latest
 # wait for sonar to finish starting up
 ./gradlew sonarqube -Dstructure101.reportdir=`pwd` --stacktrace --debug
 ```
