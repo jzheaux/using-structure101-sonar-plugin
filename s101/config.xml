@@ -2,13 +2,13 @@
 <headless version="1.0">
 	<operations>
 		<operation type="publish">
-			<argument name="label" value="1.0.0"/>
+			<argument name="label" value="baseline"/>
 			<argument name="overwrite" value="true"/>
 			<argument name="diagrams" value="true"/>
 		</operation>
 		<operation type="check-key-measures">
-			<argument name="output-file" value="key-measures.xml"/>
-			<argument name="baseline" value="1.0.0"/>
+			<argument name="output-file" value="/out/s101/key-measures.xml"/>
+			<argument name="baseline" value="baseline"/>
 			<argument name="useProjectFileSpec" value="true"/>
 			<argument name="useProjectFileDiagrams" value="true"/>
 			<argument name="fail-on-architecture-violations" value="false"/>
@@ -26,8 +26,8 @@
 		</operation>
 	</operations>
 	<arguments>
-		<argument name="local-project" value="repository.java.hsp"/>
-		<argument name="repository" value="structure101-repository"/>
-		<argument name="project" value="using-structure101-sonar-plugin"/>
+		<argument name="local-project" value="project.java.hsp"/>
+		<argument name="repository" value="repository"/>
+		<argument name="project" value="project"/>
 	</arguments>
 </headless>

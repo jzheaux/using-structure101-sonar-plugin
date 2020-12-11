@@ -10,15 +10,22 @@ group = 'com.joshcummings'
 version = '0.0.1-SNAPSHOT'
 sourceCompatibility = '1.8'
 
+task prepareStructure101(type: Exec) {
+	workingDir "$projectDir"
+	commandLine 'sh', 'scripts/s101.sh'
+}
+
 sonarqube {
 	properties {
 		property "structure101.java.disabled", "false"
-		property "structure101.java.project", "Using Structure101 Sonar Plugin"
-		property "structure101.java.repository", "$rootDir/structure101-repository"
-		property "structure101.java.classpath", "${buildDir.absolutePath}/classes/java/main/"
+		property "structure101.java.project", "project"
+		property "structure101.java.repository", "${buildDir.absolutePath}/s101/repository"
+		property "structure101.java.classpath", "${buildDir.absolutePath}/classes/main/java"
 		property "structure101.java.license", "$rootDir"
 	}
 }
+
+project.tasks["sonarqube"].dependsOn "prepareStructure101"
 
 repositories {
 	mavenCentral()
